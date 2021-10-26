@@ -30,7 +30,6 @@ const useTraverse = (eventType) => {
   };
 
   useEventListener(eventType, (e) => {
-    console.log(input);
     let number = Math.sign(e.deltaY);
     setInput(number);
   });
