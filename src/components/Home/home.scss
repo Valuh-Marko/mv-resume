@@ -1,0 +1,19 @@
+@import "../../App.scss";
+
+.home_img_wrapper,
+.title_wrapper {
+  overflow-y: hidden;
+}
+
+.home_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+}

@@ -4,7 +4,7 @@ import useTraverse from "../../useTraverse";
 export default function Skills() {
   useTraverse("wheel");
   return (
-    <div className="home">
+    <div className="overlay">
       <h1>This is Skill</h1>
     </div>
   );

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Colors
+$background: #fafafa;
+$lightGray: #8a8a8a;
+$softBlack: #454545;
+
+// Paddings and Margins
+$paddingXS: 0.9365rem; //15px
+$paddingS: 1.875rem; //30px
+$paddingM: 3.125rem; //50px
+$paddingL: 4.375rem; //75px
+$paddingXL: 6.25rem; //100px
+
+$marginXS: 0.9365rem; //15px
+$marginS: 1.875rem; //30px
+$marginM: 3.125rem; //50px
+$marginL: 4.375rem; //75px
+$marginXL: 6.25rem; //100px
+
+// Basic Styles
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  padding: $paddingXL;
+}
+
+body {
+  color: $softBlack;
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+p,
+article {
+  font-weight: 300;
+}
+
+.overlay {
+  min-height: 100vh;
+  max-width: 100vw;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

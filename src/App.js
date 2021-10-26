@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Home from "./components/Home/Home";
 import { Switch, Route } from "react-router-dom";
 import Skills from "./components/Skills/Skills";
@@ -7,7 +7,7 @@ import Projects from "./components/Projects/Projects";
 
 function App() {
   return (
-    <div className="App">
+    <div className="overlay">
       <Switch>
         <Route path="/" exact>
           <Home />
