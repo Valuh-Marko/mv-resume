@@ -1,1 +1,23 @@
 @import "../../App.scss";
+
+.about_content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.about_text {
+  z-index: 1;
+  max-width: 1311px;
+  font-weight: 700px;
+  font-size: 3rem;
+}
+
+.about_backdrop_text {
+  color: rgba($lightGray, 0.15);
+  text-transform: uppercase;
+  font-size: 18rem;
+  position: absolute;
+  left: $paddingL;
+  z-index: 0;
+}
