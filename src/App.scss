@@ -26,7 +26,7 @@ $marginXL: 6.25rem; //100px
 
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   padding: $paddingXL;
 }
 
@@ -34,6 +34,7 @@ body {
   color: $softBlack;
   font-size: 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 
 h1,
@@ -44,15 +45,23 @@ h3 {
 }
 
 p,
-article {
+article,
+li {
   font-weight: 300;
+}
+
+li {
+  margin-left: $marginS;
 }
 
 .overlay {
   min-height: 100vh;
+  max-height: 100vh;
   max-width: 100vw;
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }

@@ -1,1 +1,33 @@
 @import "../../App.scss";
+
+.skills_content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box_backdrop_container {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  gap: $paddingS;
+  transform: rotate(25deg);
+  justify-content: center;
+  right: 0;
+}
+
+.skills_text_container {
+  display: flex;
+  flex-direction: column;
+  gap: $paddingXS;
+  max-width: 560px;
+}
+
+.skills_title {
+  font-size: 6rem;
+}
+
+li {
+  margin-bottom: $marginXS;
+}
