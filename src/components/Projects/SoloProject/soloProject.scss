@@ -1,0 +1,17 @@
+@import "../../../App.scss";
+
+#laptop {
+  max-width: 1050px;
+  z-index: 1;
+}
+
+.laptop {
+  position: relative;
+
+  .project_img {
+    position: absolute;
+    left: 5rem;
+    top: 1.4375rem;
+    z-index: -1;
+  }
+}

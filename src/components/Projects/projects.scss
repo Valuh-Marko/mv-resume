@@ -1,0 +1,54 @@
+@import "../../App.scss";
+
+.projects_content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects_text_container {
+  display: flex;
+  flex-direction: column;
+  gap: $paddingXS;
+  max-width: 440px;
+  align-items: flex-start;
+}
+
+.projects_title {
+  font-size: 6rem;
+}
+
+.project_link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: $paddingXS;
+}
+
+.active_project {
+  transition: 0.3s ease-in-out;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 47px);
+    height: 4px;
+    bottom: -4px;
+    border-radius: 2px;
+    left: 47px;
+    background-color: $softBlack;
+    animation: underline 0.3s;
+    transform-origin: left;
+  }
+}
+
+@keyframes underline {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

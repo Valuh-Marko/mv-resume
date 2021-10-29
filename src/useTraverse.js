@@ -8,7 +8,9 @@ const useTraverse = (eventType) => {
   const history = useHistory();
 
   useEffect(() => {
-    pathChecker(input);
+    setTimeout(() => {
+      pathChecker(input);
+    }, 150);
   }, [input]);
 
   const pathChecker = (number) => {
@@ -23,9 +25,15 @@ const useTraverse = (eventType) => {
     }
 
     if (location.pathname === "/skills" && number > 0) {
-      return null;
+      history.push("/projects");
     } else if (location.pathname === "/skills" && number < 0) {
       history.push("/about");
+    }
+
+    if (location.pathname === "/projects" && number > 0) {
+      history.push("/projects");
+    } else if (location.pathname === "/projects" && number < 0) {
+      history.push("/skills");
     }
   };
 

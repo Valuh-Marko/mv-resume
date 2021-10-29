@@ -11,6 +11,7 @@
 .box_backdrop_container {
   display: grid;
   grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   gap: $paddingS;
   transform: rotate(25deg);
   justify-content: center;
