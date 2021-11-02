@@ -1,7 +1,8 @@
 @import "../../../App.scss";
+@import "../projects.scss";
 
 #laptop {
-  max-width: 1050px;
+  max-width: 100%;
   z-index: 1;
 }
 
@@ -10,8 +11,40 @@
 
   .project_img {
     position: absolute;
-    left: 5rem;
-    top: 1.4375rem;
+    left: 72px;
+    top: 18px;
+    z-index: -1;
+    max-width: 760px;
+  }
+}
+
+.phone {
+  position: relative;
+  max-width: 430px;
+  height: auto;
+  z-index: 1;
+
+  .project_img {
+    position: absolute;
+    z-index: -1;
+    max-width: 21.75rem;
+    top: 2.5rem;
+    left: 2.5625rem;
+    height: auto;
+  }
+}
+
+.tablet {
+  position: relative;
+  max-width: 564px;
+  height: auto;
+  z-index: 1;
+
+  .project_img {
+    position: absolute;
+    max-width: 475px;
+    top: 6.25rem;
+    left: 2.6875rem;
     z-index: -1;
   }
 }

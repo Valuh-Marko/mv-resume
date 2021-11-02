@@ -8,13 +8,22 @@ import CalendarBlank from "../../images/CalendarBlank.svg";
 import CreditCard from "../../images/CreditCard.svg";
 import PaperPlaneRight from "../../images/PaperPlaneRight.svg";
 import { SoloProject } from "./SoloProject/SoloProject";
+import { DeviceNav } from "./DeviceNav";
 
 export default function Projects() {
   const [project, setProject] = useState("movie_router");
+  const [device, setDevice] = useState("laptop");
 
   const projectHandler = (e) => {
     if (e.target.id) {
       setProject(e.target.id);
+    }
+  };
+
+  const setDeviceHandler = (e) => {
+    console.log(e.target.id);
+    if (e.target.id) {
+      setDevice(e.target.id);
     }
   };
 
@@ -25,6 +34,7 @@ export default function Projects() {
     PaperPlaneRight,
   };
   useTraverse("wheel");
+
   return (
     <div className="container">
       <div className="projects_content">
@@ -36,9 +46,9 @@ export default function Projects() {
           </p>
           <a
             className={
-              project == "movie_router"
+              project === "movie_router"
                 ? "active_project project_link"
-                : "project_link"
+                : "project_link not_active_project"
             }
             id="movie_router"
             onClick={projectHandler}>
@@ -46,9 +56,9 @@ export default function Projects() {
           </a>
           <a
             className={
-              project == "expense_tracker"
+              project === "expense_tracker"
                 ? "active_project project_link"
-                : "project_link"
+                : "project_link not_active_project"
             }
             id="expense_tracker"
             onClick={projectHandler}>
@@ -56,9 +66,9 @@ export default function Projects() {
           </a>
           <a
             className={
-              project == "todo_list"
+              project === "todo_list"
                 ? "active_project project_link"
-                : "project_link"
+                : "project_link not_active_project"
             }
             id="todo_list"
             onClick={projectHandler}>
@@ -66,9 +76,9 @@ export default function Projects() {
           </a>
           <a
             className={
-              project == "seat_booking"
+              project === "seat_booking"
                 ? "active_project project_link"
-                : "project_link"
+                : "project_link not_active_project"
             }
             id="seat_booking"
             onClick={projectHandler}>
@@ -76,8 +86,9 @@ export default function Projects() {
           </a>
         </div>
         <div className="projects_images_container">
-          <SoloProject project={project} />
+          <SoloProject project={project} device={device} />
         </div>
+        <DeviceNav device={device} setDeviceHandler={setDeviceHandler} />
       </div>
     </div>
   );
