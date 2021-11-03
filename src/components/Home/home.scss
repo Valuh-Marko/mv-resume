@@ -5,15 +5,26 @@
   overflow-y: hidden;
 }
 
+.name {
+  max-width: 100%;
+}
+
 .home_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .title {
   font-size: 4rem;
   font-weight: 200;
   letter-spacing: 0.15em;
+  @include breakpoint($tablet) {
+    font-size: 3rem;
+  }
+  @include breakpoint($largePhone) {
+    font-size: 1.8rem;
+  }
 }

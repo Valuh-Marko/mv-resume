@@ -6,13 +6,26 @@
   justify-content: flex-end;
   margin-left: auto;
   padding-right: 100px;
+  @include breakpoint($largeLaptop) {
+    padding-right: 0;
+    margin: auto;
+  }
 }
 
 .about_text {
   z-index: 1;
   max-width: 1311px;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 3rem;
+  @include breakpoint($largeLaptop) {
+    font-size: 2.5rem;
+    max-width: 80%;
+    margin: auto;
+  }
+  @include breakpoint($largePhone) {
+    font-size: 2rem;
+    max-width: 90%;
+  }
 }
 
 .about_backdrop_text {
@@ -22,4 +35,8 @@
   position: absolute;
   left: $paddingL;
   z-index: 0;
+  @include breakpoint($tablet) {
+    font-size: 10rem;
+    transform: rotate(-35deg) translateX(-15%) translateY(-20%);
+  }
 }
