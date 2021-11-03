@@ -6,6 +6,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include breakpoint($laptop) {
+    gap: $paddingS;
+  }
 }
 
 .box_backdrop_container {
@@ -15,7 +18,22 @@
   gap: $paddingS;
   transform: rotate(25deg);
   justify-content: center;
-  right: 0;
+  @include breakpoint($largeDesktop) {
+    grid-template-columns: repeat(2, 220px);
+  }
+  @include breakpoint($largeLaptop) {
+    transform: none;
+  }
+  @include breakpoint($laptop) {
+    grid-template-columns: repeat(2, 180px);
+  }
+  @include breakpoint($tablet) {
+    grid-template-columns: repeat(2, 120px);
+    transform: rotate(25deg);
+  }
+  @include breakpoint($largePhone) {
+    display: none;
+  }
 }
 
 .skills_text_container {
@@ -23,10 +41,16 @@
   flex-direction: column;
   gap: $paddingXS;
   max-width: 560px;
+  @include breakpoint($normalDesktop) {
+    max-width: 500px;
+  }
 }
 
 .skills_title {
   font-size: 6rem;
+  @include breakpoint($laptop) {
+    font-size: 4rem;
+  }
 }
 
 li {

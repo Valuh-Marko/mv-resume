@@ -37,6 +37,8 @@
   z-index: 0;
   @include breakpoint($tablet) {
     font-size: 10rem;
-    transform: rotate(-35deg) translateX(-15%) translateY(-20%);
+  }
+  @include breakpoint($largePhone) {
+    display: none;
   }
 }

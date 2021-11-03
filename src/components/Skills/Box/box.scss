@@ -9,6 +9,15 @@
   align-items: center;
   justify-content: center;
   border: 3px solid rgba(#454545, 0.3);
+  @include breakpoint($largeDesktop) {
+    height: 220px;
+  }
+  @include breakpoint($laptop) {
+    height: 180px;
+  }
+  @include breakpoint($tablet) {
+    height: 120px;
+  }
 }
 
 .box_img {

@@ -4,10 +4,13 @@ import useLoop from "../../useLoop";
 import { Box } from "./Box/Box";
 
 import "./skills.scss";
+import { useWindowDimensions } from "../../useWindowDimensions";
 
 export default function Skills() {
   useTraverse("wheel");
   const boxes = useLoop(1, 12, <Box />);
+  const { width, height } = useWindowDimensions();
+  console.log(width, height);
 
   return (
     <div className="container">
