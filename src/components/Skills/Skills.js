@@ -9,8 +9,6 @@ import { useWindowDimensions } from "../../useWindowDimensions";
 export default function Skills() {
   useTraverse("wheel");
   const boxes = useLoop(1, 12, <Box />);
-  const { width, height } = useWindowDimensions();
-  console.log(width, height);
 
   return (
     <div className="container">
@@ -31,7 +29,7 @@ export default function Skills() {
         <div className="box_backdrop_container">
           {boxes.map((box, index) => {
             return (
-              <div className="box_wrapper" key={index}>
+              <div className="box_wrapper" id={`box${index}`} key={index}>
                 <Box index={index} />
               </div>
             );

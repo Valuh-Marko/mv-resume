@@ -4,7 +4,7 @@ import "./navigation.scss";
 export default function Navigation({ pageNum }) {
   return (
     <div className="navigation">
-      <h1>{pageNum}</h1>
+      <h1 className="main_page_num">{pageNum}</h1>
     </div>
   );
 }

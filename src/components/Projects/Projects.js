@@ -52,7 +52,12 @@ export default function Projects() {
             }
             id="movie_router"
             onClick={projectHandler}>
-            <img src={images.PaperPlaneRight} alt="" /> Movie Router
+            <img
+              src={images.PaperPlaneRight}
+              alt="movie_router"
+              className="icon"
+            />{" "}
+            Movie Router
           </a>
           <a
             className={
@@ -62,7 +67,12 @@ export default function Projects() {
             }
             id="expense_tracker"
             onClick={projectHandler}>
-            <img src={images.CreditCard} alt="" /> Expense Tracker
+            <img
+              src={images.CreditCard}
+              alt="expense_tracker"
+              className="icon"
+            />{" "}
+            Expense Tracker
           </a>
           <a
             className={
@@ -72,7 +82,8 @@ export default function Projects() {
             }
             id="todo_list"
             onClick={projectHandler}>
-            <img src={images.CalendarBlank} alt="" /> Todo List
+            <img src={images.CalendarBlank} alt="todo_list" className="icon" />{" "}
+            Todo List
           </a>
           <a
             className={
@@ -82,7 +93,8 @@ export default function Projects() {
             }
             id="seat_booking"
             onClick={projectHandler}>
-            <img src={images.Bookmark} alt="" /> Seat Booking
+            <img src={images.Bookmark} alt="seat_booking" className="icon" />{" "}
+            Seat Booking
           </a>
         </div>
         <div className="projects_images_container">
