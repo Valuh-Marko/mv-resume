@@ -5,6 +5,7 @@ import { useLocation } from "react-router";
 import Skills from "./components/Skills/Skills";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 import { useState } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import { useEffect } from "react/cjs/react.development";
@@ -59,6 +60,9 @@ function App() {
         </Route>
         <Route path="/projects">
           <Projects />
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
       </Switch>
     </div>

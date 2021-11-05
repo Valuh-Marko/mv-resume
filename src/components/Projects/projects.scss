@@ -33,6 +33,9 @@
 
 .projects_title {
   font-size: 6rem;
+  @include breakpoint($desktop768p) {
+    font-size: 5.5rem;
+  }
   @include breakpoint($largeLaptop) {
     font-size: 5rem;
   }

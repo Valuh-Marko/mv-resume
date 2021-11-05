@@ -31,9 +31,15 @@ const useTraverse = (eventType) => {
     }
 
     if (location.pathname === "/projects" && number > 0) {
-      history.push("/projects");
+      history.push("/contact");
     } else if (location.pathname === "/projects" && number < 0) {
       history.push("/skills");
+    }
+
+    if (location.pathname === "/contact" && number > 0) {
+      return;
+    } else if (location.pathname === "/contact" && number < 0) {
+      history.push("/projects");
     }
   };
 

@@ -1,0 +1,89 @@
+@import "../../App.scss";
+
+.contact_content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: $paddingM;
+  @include breakpoint($largeLaptop) {
+    padding-right: 0;
+    margin: auto;
+  }
+}
+
+.contact_text_container {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $paddingXS;
+}
+
+a.mail {
+  font-weight: 700;
+  color: $softBlack;
+}
+
+.contact_tagline {
+  letter-spacing: 0.15rem;
+  line-height: 1;
+  z-index: 1;
+  max-width: 1311px;
+  font-weight: 700;
+  font-size: 4rem;
+  @include breakpoint($desktop768p) {
+    max-width: 80%;
+    margin: auto;
+  }
+  @include breakpoint($largeLaptop) {
+    font-size: 2.5rem;
+  }
+  @include breakpoint($largePhone) {
+    font-size: 2rem;
+    max-width: 90%;
+  }
+}
+
+.contact_socials_container {
+  z-index: 1;
+  display: flex;
+  gap: $paddingM;
+}
+
+.socials_link {
+  &#linkedin {
+    color: #2867b2;
+    background-color: $background;
+  }
+  &#github {
+    color: #231e1b;
+    background-color: $background;
+  }
+  &#whatsapp {
+    color: #25d366;
+    background-color: $background;
+  }
+}
+
+.social_icon {
+  font-size: 6rem;
+}
+
+.contact_backdrop_text {
+  color: rgba($lightGray, 0.15);
+  text-transform: uppercase;
+  font-size: 18rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  @include breakpoint($tablet) {
+    font-size: 10rem;
+  }
+  @include breakpoint($largePhone) {
+    display: none;
+  }
+}
