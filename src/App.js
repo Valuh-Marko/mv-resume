@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import { useState } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import { useEffect } from "react/cjs/react.development";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
@@ -47,24 +48,26 @@ function App() {
 
   return (
     <div className="overlay">
-      {page !== "" ? <Navigation pageNum={page} /> : null}
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/skills">
-          <Skills />
-        </Route>
-        <Route path="/projects">
-          <Projects />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        {page !== "" ? <Navigation pageNum={page} /> : null}
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/skills">
+            <Skills />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }

@@ -60,6 +60,7 @@
 }
 
 .skills_text_container {
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   gap: $paddingXS;

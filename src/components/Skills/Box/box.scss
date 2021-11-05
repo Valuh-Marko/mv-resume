@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   border: 2px solid rgba(#454545, 0.3);
+
   @include breakpoint($largeDesktop) {
     height: 220px;
   }
@@ -28,5 +29,11 @@
   max-width: 65%;
   @include breakpoint($tablet) {
     max-width: 60%;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

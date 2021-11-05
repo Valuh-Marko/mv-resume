@@ -73,6 +73,7 @@ a.mail {
 }
 
 .contact_backdrop_text {
+  user-select: none;
   color: rgba($lightGray, 0.15);
   text-transform: uppercase;
   font-size: 18rem;

@@ -17,16 +17,16 @@ export const Box = ({ index }) => {
   let indexChecker = (index) => {
     switch (index) {
       case 4:
-        return <img alt="" src={images.reactImg} className="box_img" />;
+        return <img alt="" src={images.reactImg} className="box_img react" />;
 
       case 5:
-        return <img alt="" src={images.cssImg} className="box_img" />;
+        return <img alt="" src={images.cssImg} className="box_img css" />;
 
       case 6:
-        return <img alt="" src={images.typeScripImg} className="box_img" />;
+        return <img alt="" src={images.typeScripImg} className="box_img ts" />;
 
       case 7:
-        return <img alt="" src={images.htmlImg} className="box_img" />;
+        return <img alt="" src={images.htmlImg} className="box_img html" />;
 
       default:
         break;
