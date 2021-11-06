@@ -8,7 +8,7 @@ import ipad from "../../../images/tablet.png";
 
 import imageHolder from "../../../imageHolder";
 
-export const SoloProject = ({ project, device }) => {
+export const SoloProject = React.memo(({ project, device }) => {
   const images = { laptop, iphone, ipad };
 
   // Display Logic
@@ -112,4 +112,4 @@ export const SoloProject = ({ project, device }) => {
 
   // Component Return
   return <div className="solo_project">{displayProject(project, device)}</div>;
-};
+});

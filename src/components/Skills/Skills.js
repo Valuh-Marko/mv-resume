@@ -1,8 +1,7 @@
 import React from "react";
 import useTraverse from "../../useTraverse";
-import useLoop from "../../useLoop";
 import { Box } from "./Box/Box";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import "./skills.scss";
 
@@ -11,12 +10,13 @@ const container = {
   show: {
     x: 0,
     transition: {
-      staggerChildren: 0.18,
+      staggerChildren: 0.1,
       ease: "easeInOut",
+      damping: 10,
     },
   },
   exit: {
-    x: "-150%",
+    opacity: 0,
     transition: {
       duration: 0.18,
       ease: "easeInOut",
@@ -29,16 +29,33 @@ const item = {
   show: { x: 0 },
 };
 
+const boxContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.18,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const box = {
+  hidden: { scale: 0 },
+  show: { scale: 1 },
+};
+
 export default function Skills() {
   useTraverse("wheel");
-  const boxes = useLoop(1, 12, <Box />);
 
-  // Array of random Numbers
-  let randNumber = [];
-  boxes.forEach(() => {
-    let number = Math.random();
-    randNumber.push(number);
-  });
+  const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   return (
     <div className="container">
@@ -67,15 +84,26 @@ export default function Skills() {
             <motion.li variants={item}>Long history in web design</motion.li>
           </motion.ul>
         </motion.div>
-        <div className="box_backdrop_container">
-          {boxes.map((box, index) => {
+        <motion.div
+          variants={boxContainer}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="box_backdrop_container">
+          {array.map((index) => {
             return (
-              <div className="box_wrapper" id={`box${index}`} key={index}>
-                <Box index={index} />
-              </div>
+              <motion.div
+                variants={box}
+                whileHover={{
+                  zIndex: 30,
+                }}
+                className="box_wrapper"
+                id={`box${index}`}>
+                <Box key={index} index={index} />
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

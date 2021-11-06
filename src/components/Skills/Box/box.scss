@@ -1,14 +1,21 @@
 @import "../../../App.scss";
 
 .box {
-  background: linear-gradient(rgba(#d6d6d6, 0.15), rgba(#454545, 0.15));
-  height: 300px;
+  background: linear-gradient(205deg, rgba(#c7c7c7, 0.1), rgba(#454545, 0.1));
+  // background: rgba($softBlack, 0.1);
+  height: 260px;
   width: 100%;
   border-radius: 30px;
+  border-top: 3px solid rgba($background, 0.15);
+  border-right: 3px solid rgba($background, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(#454545, 0.3);
+  background-clip: padding-box;
+  padding: 10px;
+  box-shadow: -5px 5px 10px rgba(#000000, 0.15);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 
   @include breakpoint($largeDesktop) {
     height: 220px;

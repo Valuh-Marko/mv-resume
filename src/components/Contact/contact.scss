@@ -1,11 +1,13 @@
 @import "../../App.scss";
 
 .contact_content {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin: auto;
   gap: $paddingM;
   @include breakpoint($largeLaptop) {
     padding-right: 0;

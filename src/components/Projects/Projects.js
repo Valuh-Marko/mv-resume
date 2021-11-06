@@ -9,6 +9,52 @@ import CreditCard from "../../images/CreditCard.svg";
 import PaperPlaneRight from "../../images/PaperPlaneRight.svg";
 import { SoloProject } from "./SoloProject/SoloProject";
 import { DeviceNav } from "./DeviceNav";
+import { motion } from "framer-motion";
+
+// Framer Motion Animation Variants
+const pictureContainer = {
+  hidden: {
+    y: "150%",
+  },
+  show: {
+    y: 0,
+    transition: {
+      ease: "easeInOut",
+      damping: 10,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.18,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const container = {
+  hidden: { x: "-150%" },
+  show: {
+    x: 0,
+    transition: {
+      staggerChildren: 0.1,
+      ease: "easeInOut",
+      damping: 10,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.18,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const item = {
+  hidden: { x: "-150%" },
+  show: { x: 0 },
+};
 
 export default function Projects() {
   const [project, setProject] = useState("movie_router");
@@ -38,13 +84,21 @@ export default function Projects() {
   return (
     <div className="container">
       <div className="projects_content">
-        <div className="projects_text_container">
-          <h2 className="projects_title">Projects</h2>
-          <p className="projects_subtitle">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="projects_text_container">
+          <motion.h2 variants={item} className="projects_title">
+            Projects
+          </motion.h2>
+          <motion.p variants={item} className="projects_subtitle">
             Some of the things I’ve been working on during my proffesional
             career in the industry
-          </p>
-          <a
+          </motion.p>
+          <motion.a
+            variants={container}
             className={
               project === "movie_router"
                 ? "active_project project_link"
@@ -52,14 +106,16 @@ export default function Projects() {
             }
             id="movie_router"
             onClick={projectHandler}>
-            <img
+            <motion.img
+              variants={item}
               src={images.PaperPlaneRight}
               alt="movie_router"
               className="icon"
             />{" "}
             Movie Router
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={container}
             className={
               project === "expense_tracker"
                 ? "active_project project_link"
@@ -67,14 +123,16 @@ export default function Projects() {
             }
             id="expense_tracker"
             onClick={projectHandler}>
-            <img
+            <motion.img
+              variants={item}
               src={images.CreditCard}
               alt="expense_tracker"
               className="icon"
             />{" "}
             Expense Tracker
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={container}
             className={
               project === "todo_list"
                 ? "active_project project_link"
@@ -82,10 +140,16 @@ export default function Projects() {
             }
             id="todo_list"
             onClick={projectHandler}>
-            <img src={images.CalendarBlank} alt="todo_list" className="icon" />{" "}
+            <motion.img
+              variants={item}
+              src={images.CalendarBlank}
+              alt="todo_list"
+              className="icon"
+            />{" "}
             Todo List
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={container}
             className={
               project === "seat_booking"
                 ? "active_project project_link"
@@ -93,13 +157,23 @@ export default function Projects() {
             }
             id="seat_booking"
             onClick={projectHandler}>
-            <img src={images.Bookmark} alt="seat_booking" className="icon" />{" "}
+            <motion.img
+              variants={item}
+              src={images.Bookmark}
+              alt="seat_booking"
+              className="icon"
+            />{" "}
             Seat Booking
-          </a>
-        </div>
-        <div className="projects_images_container">
+          </motion.a>
+        </motion.div>
+        <motion.div
+          variants={pictureContainer}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="projects_images_container">
           <SoloProject project={project} device={device} />
-        </div>
+        </motion.div>
         <DeviceNav device={device} setDeviceHandler={setDeviceHandler} />
       </div>
     </div>

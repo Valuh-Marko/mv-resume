@@ -20,6 +20,9 @@
 }
 
 .projects_text_container {
+  overflow-x: hidden;
+  justify-content: center;
+  min-height: 50%;
   display: flex;
   flex-direction: column;
   gap: $paddingXS;
@@ -32,9 +35,12 @@
 }
 
 .projects_title {
-  font-size: 6rem;
+  font-size: 5.9rem;
+  @include breakpoint($normalDesktop) {
+    font-size: 5.3rem;
+  }
   @include breakpoint($desktop768p) {
-    font-size: 5.5rem;
+    font-size: 5.2rem;
   }
   @include breakpoint($largeLaptop) {
     font-size: 5rem;
@@ -55,7 +61,6 @@
 }
 
 .active_project {
-  transition: 0.3s ease-in-out;
   position: relative;
   &::after {
     content: "";
@@ -68,11 +73,11 @@
     background-color: $softBlack;
     animation: underline 0.3s;
     transform-origin: left;
+    transition: 0.3s ease-in-out;
   }
 }
 
 .not_active_project {
-  transition: 0.3s ease-in-out;
   position: relative;
   &::after {
     content: "";
@@ -86,6 +91,7 @@
     background-color: $softBlack;
     animation: removeUnderline 0.3s;
     transform-origin: left;
+    transition: 0.3s ease-in-out;
   }
 }
 
@@ -108,6 +114,8 @@
 }
 
 .projects_images_container {
+  overflow-y: hidden;
+  min-height: 50%;
   width: 100%;
   display: flex;
   justify-content: center;

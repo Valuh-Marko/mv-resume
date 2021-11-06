@@ -3,10 +3,56 @@ import useTraverse from "../../useTraverse";
 // Tooltip Imports
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { motion } from "framer-motion";
 
 import "./contact.scss";
 // Icons
 import { FaGithubSquare, FaLinkedin, FaWhatsappSquare } from "react-icons/fa";
+
+// Framer Motion Variants
+const container = {
+  hidden: { x: "-150%" },
+  show: {
+    x: 0,
+    transition: {
+      staggerChildren: 0.1,
+      ease: "easeInOut",
+      damping: 10,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.18,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const containerBackdrop = {
+  hidden: { x: "150%", opacity: 0 },
+  show: {
+    opacity: 1,
+    x: "-50%",
+    transition: {
+      staggerChildren: 0.1,
+      ease: "easeInOut",
+      damping: 10,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.18,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const item = {
+  hidden: { x: "-150%" },
+  show: { x: 0 },
+};
 
 export default function Contact() {
   // Tooltip Customization
@@ -31,12 +77,17 @@ export default function Contact() {
 
   return (
     <div className="contact_content">
-      <div className="contact_text_container">
-        <h4 className="contact_tagline">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="contact_text_container">
+        <motion.h4 variants={item} className="contact_tagline">
           I do JS and CSS <br />
           So you don't have to!
-        </h4>
-        <p className="contact_text">
+        </motion.h4>
+        <motion.p variants={item} className="contact_text">
           If you would like to see more you can check out my Github page. <br />
           Also, you can contact me via{" "}
           <CustomTooltip
@@ -48,9 +99,14 @@ export default function Contact() {
             </a>
           </CustomTooltip>
           , or any other social media below!
-        </p>
-      </div>
-      <div className="contact_socials_container">
+        </motion.p>
+      </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="contact_socials_container">
         <CustomTooltip arrow title="LinkedIn">
           <a
             target="_blank"
@@ -74,8 +130,15 @@ export default function Contact() {
             <FaWhatsappSquare className="social_icon" />
           </a>
         </CustomTooltip>
-      </div>
-      <h2 className="contact_backdrop_text">CONTACT</h2>
+      </motion.div>
+      <motion.h2
+        variants={containerBackdrop}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="contact_backdrop_text">
+        Contact
+      </motion.h2>
     </div>
   );
 }

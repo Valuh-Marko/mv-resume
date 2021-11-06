@@ -21,7 +21,7 @@
 
 .box_backdrop_container {
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 260px);
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   gap: $paddingS;
   transform: rotate(25deg);
@@ -60,7 +60,7 @@
 }
 
 .skills_text_container {
-  overflow-y: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: $paddingXS;
@@ -69,6 +69,10 @@
     max-width: 500px;
     gap: $paddingXS / 2;
   }
+}
+
+.box_wrapper {
+  z-index: 0;
 }
 
 .skills_title {

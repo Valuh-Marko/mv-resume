@@ -18,7 +18,6 @@ const left = {
   },
   exit: {
     opacity: 0,
-    x: "-150%",
     transition: {
       duration: 0.18,
       ease: "easeInOut",
@@ -41,7 +40,6 @@ const right = {
   },
   exit: {
     opacity: 0,
-    x: "150%",
     transition: {
       duration: 0.18,
       ease: "easeInOut",

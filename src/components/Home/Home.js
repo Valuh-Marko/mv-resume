@@ -18,7 +18,7 @@ const item = {
     },
   },
   exit: {
-    y: 140,
+    opacity: 0,
     transition: {
       duration: 0.18,
       ease: "easeInOut",
