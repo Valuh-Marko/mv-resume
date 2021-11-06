@@ -49,19 +49,19 @@ function App() {
     <div className="overlay">
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route path="/" exact>
+          <Route path="/mv-resume/" exact>
             <Home />
           </Route>
-          <Route path="/about">
+          <Route path="/mv-resume/about">
             <About />
           </Route>
-          <Route path="/skills">
+          <Route path="/mv-resume/skills">
             <Skills />
           </Route>
-          <Route path="/projects">
+          <Route path="/mv-resume/projects">
             <Projects />
           </Route>
-          <Route path="/contact">
+          <Route path="/mv-resume/contact">
             <Contact />
           </Route>
         </Switch>
