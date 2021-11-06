@@ -14,14 +14,14 @@ const useTraverse = (eventType) => {
   }, [input]);
 
   const pathChecker = (number) => {
-    if (location.pathname === "/mv-resume/" && number > 0) {
+    if (location.pathname === "/mv-resume" && number > 0) {
       history.push("mv-resume/about");
     }
 
     if (location.pathname === "/mv-resume/about" && number > 0) {
       history.push("mv-resume/skills");
     } else if (location.pathname === "/mv-resume/about" && number < 0) {
-      history.push("/mv-resume/");
+      history.push("/mv-resume");
     }
 
     if (location.pathname === "/mv-resume/skills" && number > 0) {
