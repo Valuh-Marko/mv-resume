@@ -1,6 +1,14 @@
 @import "../../App.scss";
 
+.about_content_wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
 .about_content {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -33,6 +41,7 @@
 .about_backdrop_text {
   color: rgba($lightGray, 0.15);
   text-transform: uppercase;
+  line-height: 1;
   font-size: 18rem;
   position: absolute;
   left: $paddingL;

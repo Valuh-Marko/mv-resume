@@ -10,6 +10,7 @@
     gap: $paddingS;
   }
   @include breakpoint($tablet) {
+    gap: $paddingM;
     align-content: center;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,6 +32,9 @@
   @include breakpoint($normalDesktop) {
     max-width: 380px;
     gap: $paddingXS / 2;
+  }
+  @include breakpoint($tablet) {
+    min-height: 0%;
   }
 }
 
@@ -120,6 +124,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include breakpoint($tablet) {
+    min-height: 0%;
+  }
 }
 
 .devices_nav {

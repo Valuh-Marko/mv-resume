@@ -33,7 +33,7 @@ const containerBackdrop = {
   hidden: { x: "150%", opacity: 0 },
   show: {
     opacity: 1,
-    x: "-50%",
+    x: 0,
     transition: {
       staggerChildren: 0.1,
       ease: "easeInOut",
@@ -76,69 +76,83 @@ export default function Contact() {
   useTraverse("wheel");
 
   return (
-    <div className="contact_content">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        className="contact_text_container">
-        <motion.h4 variants={item} className="contact_tagline">
-          I do JS and CSS <br />
-          So you don't have to!
-        </motion.h4>
-        <motion.p variants={item} className="contact_text">
-          If you would like to see more you can check out my Github page. <br />
-          Also, you can contact me via{" "}
-          <CustomTooltip
-            arrow
-            placement="bottom-start"
-            title="mvaluh@gmail.com">
-            <a href="mailto: mvaluh@gmail.com" className="mail">
-              Email
-            </a>
-          </CustomTooltip>
-          , or any other social media below!
-        </motion.p>
-      </motion.div>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        className="contact_socials_container">
-        <CustomTooltip arrow title="LinkedIn">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/marko-valuh/"
-            className="socials_link"
-            id="linkedin">
-            <FaLinkedin className="social_icon" />
-          </a>
-        </CustomTooltip>
-        <CustomTooltip arrow title="GitHub">
-          <a
-            target="_blank"
-            href="https://github.com/Valuh-Marko"
-            className="socials_link"
-            id="github">
-            <FaGithubSquare className="social_icon" />
-          </a>
-        </CustomTooltip>
-        <CustomTooltip arrow title="Phone: +381693361653">
-          <a href="tel: +381693361653" className="socials_link" id="whatsapp">
-            <FaWhatsappSquare className="social_icon" />
-          </a>
-        </CustomTooltip>
-      </motion.div>
-      <motion.h2
-        variants={containerBackdrop}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        className="contact_backdrop_text">
-        Contact
-      </motion.h2>
+    <div className="contact">
+      <div className="container">
+        <div className="contact_content">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="contact_text_container">
+            <motion.h4 variants={item} className="contact_tagline">
+              I do JS and CSS <br />
+              so you don't have to!
+            </motion.h4>
+            <motion.p variants={item} className="contact_text">
+              If you would like to see more you can check out my Github page.{" "}
+              <br />
+              Also, you can contact me via{" "}
+              <CustomTooltip arrow title="mvaluh@gmail.com">
+                <a href="mailto: mvaluh@gmail.com" className="mail">
+                  Email
+                </a>
+              </CustomTooltip>
+              , or any other social media below!
+            </motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="contact_socials_container">
+            <CustomTooltip arrow title="LinkedIn">
+              <motion.a
+                whileHover={{
+                  scale: 1.1,
+                }}
+                target="_blank"
+                href="https://www.linkedin.com/in/marko-valuh/"
+                className="socials_link"
+                id="linkedin">
+                <FaLinkedin className="social_icon" />
+              </motion.a>
+            </CustomTooltip>
+            <CustomTooltip arrow title="GitHub">
+              <motion.a
+                whileHover={{
+                  scale: 1.1,
+                }}
+                target="_blank"
+                href="https://github.com/Valuh-Marko"
+                className="socials_link"
+                id="github">
+                <FaGithubSquare className="social_icon" />
+              </motion.a>
+            </CustomTooltip>
+            <CustomTooltip arrow title="Phone: +381693361653">
+              <motion.a
+                whileHover={{
+                  scale: 1.1,
+                }}
+                href="tel: +381693361653"
+                className="socials_link"
+                id="whatsapp">
+                <FaWhatsappSquare className="social_icon" />
+              </motion.a>
+            </CustomTooltip>
+          </motion.div>
+          <motion.h2
+            variants={containerBackdrop}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="contact_backdrop_text">
+            Contact
+          </motion.h2>
+        </div>
+      </div>
     </div>
   );
 }

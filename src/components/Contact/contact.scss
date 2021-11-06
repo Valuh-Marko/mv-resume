@@ -1,12 +1,17 @@
 @import "../../App.scss";
 
+.contact {
+  width: 100%;
+}
+
 .contact_content {
+  min-height: 80vh;
   overflow-x: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: right;
   margin: auto;
   gap: $paddingM;
   @include breakpoint($largeLaptop) {
@@ -19,9 +24,9 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: $paddingXS;
+  gap: $paddingS;
 }
 
 a.mail {
@@ -35,21 +40,17 @@ a.mail {
   z-index: 1;
   max-width: 1311px;
   font-weight: 700;
-  font-size: 4rem;
-  @include breakpoint($desktop768p) {
-    max-width: 80%;
-    margin: auto;
-  }
+  font-size: 5rem;
   @include breakpoint($largeLaptop) {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   @include breakpoint($largePhone) {
-    font-size: 2rem;
-    max-width: 90%;
+    font-size: 2.5rem;
   }
 }
 
 .contact_socials_container {
+  max-width: 100%;
   z-index: 1;
   display: flex;
   gap: $paddingM;
@@ -72,6 +73,9 @@ a.mail {
 
 .social_icon {
   font-size: 6rem;
+  @include breakpoint($tablet) {
+    font-size: 4rem;
+  }
 }
 
 .contact_backdrop_text {
@@ -80,8 +84,7 @@ a.mail {
   text-transform: uppercase;
   font-size: 18rem;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: $paddingL;
   z-index: 0;
   @include breakpoint($tablet) {
     font-size: 10rem;

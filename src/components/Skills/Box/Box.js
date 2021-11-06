@@ -24,7 +24,8 @@ const react = {
 
 const item = {
   hover: {
-    scale: [1, 1.2, 1],
+    scale: 1.1,
+    transition: { yoyo: Infinity },
   },
 };
 

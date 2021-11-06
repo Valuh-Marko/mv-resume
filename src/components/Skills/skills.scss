@@ -6,6 +6,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include breakpoint($largeLaptop) {
+    gap: $paddingM;
+  }
   @include breakpoint($laptop) {
     gap: $paddingS;
   }
