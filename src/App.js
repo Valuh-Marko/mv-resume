@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 import { AnimatePresence } from "framer-motion";
+import { HashRouter as Router } from "react-router-dom";
 
 function App() {
   const location = useLocation();
@@ -47,25 +48,27 @@ function App() {
 
   return (
     <div className="overlay">
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/skills">
-            <Skills />
-          </Route>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
-      </AnimatePresence>
+      <Router basename={process.env.PUBLIC_URL || ""}>
+        <AnimatePresence exitBeforeEnter>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/skills">
+              <Skills />
+            </Route>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </AnimatePresence>
+      </Router>
     </div>
   );
 }
