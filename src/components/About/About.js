@@ -1,9 +1,7 @@
 import React from "react";
 import useTraverse from "../../useTraverse";
-import { motion, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import "./about.scss";
-import useEventListener from "../../useEventListener";
-import { useEffect } from "react/cjs/react.development";
 
 const left = {
   hidden: {

@@ -99,6 +99,7 @@ export default function Projects() {
           </motion.p>
           <motion.a
             variants={container}
+            whileHover={{ scale: 1.1 }}
             className={
               project === "movie_router"
                 ? "active_project project_link"
@@ -115,6 +116,7 @@ export default function Projects() {
             Movie Router
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             variants={container}
             className={
               project === "expense_tracker"
@@ -132,6 +134,7 @@ export default function Projects() {
             Expense Tracker
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             variants={container}
             className={
               project === "todo_list"
@@ -149,6 +152,7 @@ export default function Projects() {
             Todo List
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.1 }}
             variants={container}
             className={
               project === "seat_booking"

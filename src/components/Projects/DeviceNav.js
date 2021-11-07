@@ -38,6 +38,7 @@ export const DeviceNav = ({ device, setDeviceHandler }) => {
       className="devices_nav">
       <motion.div
         variants={item}
+        whileHover={{ scale: 1.3 }}
         className={
           device === "laptop"
             ? "active_device device laptop_icon"
@@ -51,6 +52,7 @@ export const DeviceNav = ({ device, setDeviceHandler }) => {
       </motion.div>
       <motion.div
         variants={item}
+        whileHover={{ scale: 1.3 }}
         className={
           device === "phone"
             ? "active_device device phone_icon"
@@ -64,6 +66,7 @@ export const DeviceNav = ({ device, setDeviceHandler }) => {
       </motion.div>
       <motion.div
         variants={item}
+        whileHover={{ scale: 1.3 }}
         className={
           device === "tablet"
             ? "active_device device tablet_icon"
