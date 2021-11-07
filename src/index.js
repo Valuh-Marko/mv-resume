@@ -7,7 +7,7 @@ import { HashRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/mv-resume">
+    <Router basename={window.location.pathname || ""}>
       <App />
     </Router>
   </React.StrictMode>,
