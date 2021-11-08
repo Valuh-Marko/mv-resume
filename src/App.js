@@ -6,10 +6,24 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import { AnimatePresence } from "framer-motion";
+// import { Cursor } from "./components/Cursor/Cursor";
 
 function App() {
+  /*
+   * Functionality of the custom cursor, being tested for future implementation.
+   **/
+  // const customCursorHandler = (e) => {
+  //   document
+  //     .querySelector(".cursor")
+  //     .setAttribute(
+  //       `style`,
+  //       `top: ${e.pageY - 8.5}px; left: ${e.pageX - 8.5}px;`,
+  //     );
+  // };
+
   return (
     <div className="overlay">
+      {/* <Cursor />  this cursor is a work in progress */}
       <AnimatePresence exitBeforeEnter>
         <Switch>
           <Route path="/" exact>

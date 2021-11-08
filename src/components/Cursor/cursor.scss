@@ -1,0 +1,16 @@
+@import "../../App.scss";
+
+body {
+  cursor: none;
+}
+
+.cursor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #272727;
+  pointer-events: none;
+  z-index: 30;
+  transition: 0.15s ease-out;
+}
