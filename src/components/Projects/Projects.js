@@ -67,7 +67,6 @@ export default function Projects() {
   };
 
   const setDeviceHandler = (e) => {
-    console.log(e.target.id);
     if (e.target.id) {
       setDevice(e.target.id);
     }

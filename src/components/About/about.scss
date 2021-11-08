@@ -1,10 +1,13 @@
 @import "../../App.scss";
 
 .about_content_wrapper {
+  user-select: none;
   display: flex;
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
+  perspective: 50px !important;
+  z-index: 30;
 }
 
 .about_content {

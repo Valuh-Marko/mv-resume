@@ -1,6 +1,6 @@
 import React from "react";
 import useTraverse from "../../useTraverse";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import "./about.scss";
 
 const left = {
@@ -48,17 +48,34 @@ const right = {
 };
 
 export default function About() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useTransform(y, [0, 1080], [15, -15]);
+  const rotateY = useTransform(x, [0, 1920], [-25, 25]);
+
+  function handleMouse(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    x.set(event.clientX - rect.left);
+    y.set(event.clientY - rect.top);
+  }
+
   useTraverse("wheel");
   useTraverse("keydown");
   return (
-    <div className="about_content_wrapper">
+    <motion.div className="about_content_wrapper" onMouseMove={handleMouse}>
       <div className="about_content">
         <motion.h4
           className="about_text"
           variants={left}
           initial="hidden"
           animate="show"
-          exit="exit">
+          exit="exit"
+          style={{
+            translateX: rotateX,
+            translateY: rotateY,
+          }}>
           I’m a Front-End developer who cares deeply about user experience.
           Striving for simplicity, elegance and a great challenge!
         </motion.h4>
@@ -67,10 +84,14 @@ export default function About() {
           variants={right}
           initial="hidden"
           animate="show"
-          exit="exit">
+          exit="exit"
+          style={{
+            translateY: rotateX,
+            translateX: rotateY,
+          }}>
           About me
         </motion.h2>
       </div>
-    </div>
+    </motion.div>
   );
 }
