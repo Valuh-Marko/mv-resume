@@ -29,6 +29,7 @@ const item = {
 export default function Home() {
   const name = image;
   useTraverse("wheel");
+  useTraverse("keydown");
   return (
     <div className="container">
       <div className="home_content">

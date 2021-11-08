@@ -11,10 +11,11 @@ import { FaGithubSquare, FaLinkedin, FaWhatsappSquare } from "react-icons/fa";
 
 // Framer Motion Variants
 const container = {
-  hidden: { x: "-150%" },
+  hidden: { x: "-100vw" },
   show: {
     x: 0,
     transition: {
+      duration: 0.4,
       staggerChildren: 0.1,
       ease: "easeInOut",
       damping: 10,
@@ -35,6 +36,7 @@ const containerBackdrop = {
     opacity: 1,
     x: 0,
     transition: {
+      duration: 0.4,
       staggerChildren: 0.1,
       ease: "easeInOut",
       damping: 10,
@@ -74,6 +76,7 @@ export default function Contact() {
 
   // Scrolling
   useTraverse("wheel");
+  useTraverse("keydown");
 
   return (
     <div className="contact">

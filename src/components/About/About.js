@@ -12,7 +12,7 @@ const left = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeInOut",
     },
   },
@@ -34,7 +34,7 @@ const right = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeInOut",
     },
   },
@@ -49,6 +49,7 @@ const right = {
 
 export default function About() {
   useTraverse("wheel");
+  useTraverse("keydown");
   return (
     <div className="about_content_wrapper">
       <div className="about_content">

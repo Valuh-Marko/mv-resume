@@ -4,6 +4,7 @@ import { Box } from "./Box/Box";
 import { motion } from "framer-motion";
 
 import "./skills.scss";
+import useEventListener from "../../useEventListener";
 
 const container = {
   hidden: { x: "-150%" },
@@ -54,7 +55,7 @@ const box = {
 
 export default function Skills() {
   useTraverse("wheel");
-
+  useTraverse("keydown");
   const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   return (

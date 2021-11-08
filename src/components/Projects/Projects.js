@@ -79,7 +79,9 @@ export default function Projects() {
     CreditCard,
     PaperPlaneRight,
   };
+
   useTraverse("wheel");
+  useTraverse("keydown");
 
   return (
     <div className="container">

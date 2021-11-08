@@ -45,7 +45,23 @@ const useTraverse = (eventType) => {
 
   useEventListener(eventType, (e) => {
     let number = Math.sign(e.deltaY);
-    setInput(number);
+    if (e.type === "wheel") {
+      setInput(number);
+    } else if (e.type === "keydown") {
+      switch (e.keyCode) {
+        case 37:
+          setInput(-1);
+          break;
+
+        case 38:
+          setInput(-1);
+          break;
+
+        default:
+          setInput(1);
+          break;
+      }
+    }
   });
 };
 
