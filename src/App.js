@@ -20,23 +20,23 @@ function App() {
 
   const pageHandler = (path) => {
     switch (path) {
-      case "/":
+      case "":
         setPage("");
         break;
 
-      case "/about":
+      case "about":
         setPage("");
         break;
 
-      case "/skills":
+      case "skills":
         setPage("01");
         break;
 
-      case "/projects":
+      case "projects":
         setPage("02");
         break;
 
-      case "/contact":
+      case "contact":
         setPage("03");
         break;
 
@@ -49,19 +49,19 @@ function App() {
     <div className="overlay">
       <AnimatePresence exitBeforeEnter>
         <Switch>
-          <Route path="/" exact>
+          <Route path="" exact>
             <Home />
           </Route>
-          <Route path="/about">
+          <Route path="about">
             <About />
           </Route>
-          <Route path="/skills">
+          <Route path="skills">
             <Skills />
           </Route>
-          <Route path="/projects">
+          <Route path="projects">
             <Projects />
           </Route>
-          <Route path="/contact">
+          <Route path="contact">
             <Contact />
           </Route>
         </Switch>
