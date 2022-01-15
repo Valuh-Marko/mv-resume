@@ -11,6 +11,7 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   /*
    * Functionality of the custom cursor, being tested for future implementation.
+   * Heavily Impacts Performance
    **/
   // const customCursorHandler = (e) => {
   //   document
