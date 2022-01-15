@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Marko Valuh - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this application
 
-## Available Scripts
+This application my personal portfolio.
 
-In the project directory, you can run:
+## Steps to reproduce to start the application
 
-### `npm start`
+- In the console or the integrated terminal within the directory of the project run the following command:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ```
+  npm start
+  ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  This will start the development server.
+  **The build version of the website is up on Github Pages**
 
-### `npm test`
+## Website showcase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Upon opening the website, use either your _mousewheel_ or _arrow keys_ to explore the website
+- Each page has something to show, play around :)
+- The _Projects page_ is a showcase of the things I have created over my career. Each of the projects is clicable. On the right side of the screen, you can preview the project on one of three devices added
 
-### `npm run build`
+## Tech decisions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ReactJS](https://reactjs.org/)
+- [SASS](https://create-react-app.dev/docs/adding-a-sass-stylesheet/)
+- [ReactRouter](https://reactrouter.com/)
+- [FramerMotion](https://www.framer.com/motion/)
+- [MaterialUi](https://mui.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The core of the project is located in **App.js**, which includes the core structure, routing and animation pressence (a requirement for _Framer Motion_);
+- All the components are in the **components** folder:
+  1. **About.js** - This is a descriptive component.
+  2. **Contact.js** - Last page of the webiste, contains all social links, and uses styles from _MUI_ for more styalized tooltips
+  3. **Cursor.js** - Custom cursor component. (_Still in development_)
+  4. **Home.js** - This is a descriptive component. This is the first thing you see when you enter the website
+  5. **Navigation.js** - This component shows the page that you are currently on and acts as a navigation. (_Still in development_)
+  6. **Projects.js** - Projects page component, contains the necessary logic for switching between projects and devices. Contains:
+  - **SoloProject.js** - Acts as a display for the selected project. Contains all the devices as individual smaller components.
+  7. **Skills.js** - This is a descriptive component.
+- The **imageHolder** holds all the relative paths to the images located in the _images_ folder
+- There are 4 custom Hooks created as a necessity for the project:
+  1. **useEventListener** - Allows us to use the native event listener functionality
+  2. **useLoop** - Designed with intentions to minimize code repentence, mainly used to make more copies of the same component with less code.
+  3. **useTraverse** - This hook allows us to use our mouse or keyboard to scroll through the website. Enables switching betwen React Router routes without the need of an implemented clickable navigation
+  4. **useWindowDimensions** - Used for website responsiveness.
 
-### `npm run eject`
+## Points for improvements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Creating a more managable, global state, with either useReducer or Redux
+- Implementing the custom cursor feature with less impact on the performance of the website.
+- Implementing a clicable navigation
+- Creating animated popups to help the user navigate through the site easier
+- Separating component into more individual pieces
