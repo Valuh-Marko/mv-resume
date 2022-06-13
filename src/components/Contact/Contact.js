@@ -75,7 +75,7 @@ export default function Contact() {
   }));
 
   // Scrolling
-  useTraverse("wheel");
+  
   useTraverse("keydown");
 
   return (

@@ -28,3 +28,35 @@
     font-size: 1.8rem;
   }
 }
+
+.show_navigation_help_wrapper {
+  overflow-x: hidden;
+  position: absolute;
+  bottom: 20%;
+
+  @include breakpoint($tablet) {
+    display: none;
+  }
+}
+
+.show_navigation_help {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.arrow_left {
+  transform: rotate(180deg);
+}
+
+.arrow_top {
+  transform: rotate(-90deg);
+}
+
+.arrow_down {
+  transform: rotate(90deg);
+}
+
+.navigation_text {
+  font-weight: 300;
+}

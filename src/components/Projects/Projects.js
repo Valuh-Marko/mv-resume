@@ -79,7 +79,7 @@ export default function Projects() {
     PaperPlaneRight,
   };
 
-  useTraverse("wheel");
+  
   useTraverse("keydown");
 
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import useTraverse from "../../useTraverse";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import "./about.scss";
 
 const left = {
@@ -48,7 +48,7 @@ const right = {
 };
 
 export default function About() {
-  useTraverse("wheel");
+  
   useTraverse("keydown");
   return (
     <motion.div className="about_content_wrapper">
