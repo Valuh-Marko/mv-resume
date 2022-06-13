@@ -74,29 +74,12 @@ export default function Contact() {
     },
   }));
 
-  // Framer Motion Paralax
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useTransform(y, [0, 1080], [15, -15]);
-  const rotateY = useTransform(x, [0, 1920], [-25, 25]);
-
-  const moveX = useTransform(x, [0, 1920], [-35, 35]);
-  const moveY = useTransform(x, [0, 1080], [25, -25]);
-
-  function handleMouse(event) {
-    const rect = event.currentTarget.getBoundingClientRect();
-
-    x.set(event.clientX - rect.left);
-    y.set(event.clientY - rect.top);
-  }
-
   // Scrolling
   useTraverse("wheel");
   useTraverse("keydown");
 
   return (
-    <div className="contact" onMouseMove={handleMouse}>
+    <div className="contact">
       <div className="container">
         <div className="contact_content">
           <motion.div
@@ -104,11 +87,7 @@ export default function Contact() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="contact_text_container"
-            style={{
-              translateX: rotateX,
-              translateY: rotateY,
-            }}>
+            className="contact_text_container">
             <motion.h4 variants={item} className="contact_tagline">
               I do JS and CSS <br />
               so you don't have to!
@@ -130,11 +109,7 @@ export default function Contact() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="contact_socials_container"
-            style={{
-              translateX: moveY,
-              translateY: moveX,
-            }}>
+            className="contact_socials_container">
             <CustomTooltip arrow title="LinkedIn">
               <motion.a
                 whileHover={{
@@ -176,11 +151,7 @@ export default function Contact() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="contact_backdrop_text"
-            style={{
-              translateX: rotateY,
-              translateY: rotateX,
-            }}>
+            className="contact_backdrop_text">
             {" "}
             Contact
           </motion.h2>
